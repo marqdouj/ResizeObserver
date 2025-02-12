@@ -1,0 +1,86 @@
+﻿@page "/demo"
+@rendermode InteractiveServer
+@inject HtmlResizeObserver ResizeObserver
+
+<FluentLayout>
+    <FluentHeader>Html ResizeObserver Demo</FluentHeader>
+
+    <FluentStack Orientation="Orientation.Vertical">
+        <div>
+            <p>Resize the browser window to see the div 1/2 resize events.</p>
+        </div>
+
+        <div id="@resizeId1" style="background-color:cadetblue;width:100%">
+            <p>Resize1 Width: @(resize1Args?.Width ?? 0)</p>
+            <p>Resize1 Height: @(resize1Args?.Height ?? 0)</p>
+        </div>
+
+        <div id="@resizeId2" style="background-color:cornflowerblue;width:100%">
+            <p>Resize2 Width: @(resize2Args?.Width ?? 0)</p>
+            <p>Resize2 Height: @(resize2Args?.Height ?? 0)</p>
+        </div>
+
+        <div>
+            <p>Resize the browser window/splitter to see the div 3/4 resize events.</p>
+        </div>
+
+        <FluentSplitter Orientation="Orientation.Horizontal" Panel1MinSize="25%" Style="width:100%;">
+            <Panel1>
+                <div id="@resizeId3" style="background-color:cadetblue;width:100%">
+                    <p>Resize3 Width: @(resize3Args?.Width ?? 0)</p>
+                    <p>Resize3 Height: @(resize3Args?.Height ?? 0)</p>
+                </div>
+            </Panel1>
+            <Panel2>
+                <div id="@resizeId4" style="background-color:cornflowerblue;width:100%">
+                    <p>Resize4 Width: @(resize4Args?.Width ?? 0)</p>
+                    <p>Resize4 Height: @(resize4Args?.Height ?? 0)</p>
+                </div>
+            </Panel2>
+        </FluentSplitter>
+    </FluentStack>
+</FluentLayout>
+
+@code {
+    private const string resizeId1 = "resizeId_1";
+    private const string resizeId2 = "resizeId_2";
+    private const string resizeId3 = "resizeId_3";
+    private const string resizeId4 = "resizeId_4";
+    private OnResizeArgs? resize1Args;
+    private OnResizeArgs? resize2Args;
+    private OnResizeArgs? resize3Args;
+    private OnResizeArgs? resize4Args;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            ResizeObserver.OnResize += OnResize;
+            await ResizeObserver.Observe(resizeId1);
+            await ResizeObserver.Observe(resizeId2);
+            await ResizeObserver.Observe(resizeId3);
+            await ResizeObserver.Observe(resizeId4);
+        }
+    }
+
+    private void OnResize(OnResizeArgs args)
+    {
+        switch (args.Id)
+        {
+            case resizeId1:
+                resize1Args = args;
+                break;
+            case resizeId2:
+                resize2Args = args;
+                break;
+            case resizeId3:
+                resize3Args = args;
+                break;
+            case resizeId4:
+                resize4Args = args;
+                break;
+        }
+
+        StateHasChanged();
+    }
+}
