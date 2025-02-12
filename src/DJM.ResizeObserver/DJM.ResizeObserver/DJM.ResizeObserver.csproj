@@ -4,8 +4,13 @@
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+	<Version>9.0.0</Version>
+	<Title>DJM Html ResizeObserver</Title>
+	<Authors>Doug Marquardt</Authors>
+	<Description>Custom FluentUI Components</Description>
+	<Copyright>© Douglas Marquardt. All rights reserved.</Copyright>
+	<PackageTags>Html Resize</PackageTags>
   </PropertyGroup>
-
 
   <ItemGroup>
     <SupportedPlatform Include="browser" />
