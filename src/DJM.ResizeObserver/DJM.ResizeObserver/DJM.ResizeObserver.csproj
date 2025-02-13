@@ -8,10 +8,19 @@
 	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	<Title>DJM Html ResizeObserver</Title>
 	<Authors>Doug Marquardt</Authors>
-	<Description>Custom FluentUI Components</Description>
+	<Description>Blazor Html ResizeObserver</Description>
 	<Copyright>© Douglas Marquardt. All rights reserved.</Copyright>
 	<PackageTags>Html Resize</PackageTags>
+	<PackageProjectUrl>https://github.com/marqdouj/ResizeObserver</PackageProjectUrl>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <SupportedPlatform Include="browser" />
