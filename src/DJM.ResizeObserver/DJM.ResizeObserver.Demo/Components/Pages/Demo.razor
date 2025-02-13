@@ -2,12 +2,14 @@
 @rendermode InteractiveServer
 @inject HtmlResizeObserver ResizeObserver
 
+<PageTitle>Demo</PageTitle>
+
 <FluentLayout>
     <FluentHeader>Html ResizeObserver Demo</FluentHeader>
 
     <FluentStack Orientation="Orientation.Vertical">
         <div>
-            <p>Resize the browser window/spltter to see the resize event results.</p>
+            <FluentLabel Typo="Typography.H3">Resize the browser window/splitter to see the resize event results.</FluentLabel>
         </div>
 
         <div id="@resizeId1" style="background-color:cadetblue;width:100%">
