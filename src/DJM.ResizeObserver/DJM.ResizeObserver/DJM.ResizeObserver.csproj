@@ -4,7 +4,7 @@
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-	<Version>9.1.0</Version>
+	<Version>9.2.0</Version>
 	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	<Title>DJM Html ResizeObserver</Title>
 	<Authors>Doug Marquardt</Authors>
@@ -13,6 +13,8 @@
 	<PackageTags>Html Resize</PackageTags>
 	<PackageProjectUrl>https://github.com/marqdouj/ResizeObserver</PackageProjectUrl>
 	<PackageReadmeFile>README.md</PackageReadmeFile>
+	<PackageId>Marqdouj.ResizeObserver</PackageId>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
