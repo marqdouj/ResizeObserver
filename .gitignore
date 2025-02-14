@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/src/DJM.ResizeObserver/DJM.ResizeObserver/ts/htmlResizeObserver.js
+/src/DJM.ResizeObserver/DJM.ResizeObserver/ts/htmlResizeObserver.js.map
